@@ -1,0 +1,18 @@
+app_name: revs
+sig_from: The EventSwarm team
+sig_email: info@eventswarm.com
+email_from: 'EventSwarm Alerts <alerts@eventswarm.com>'
+base_url: 'http://localhost:9292/'
+smtp_host: localhost
+smtp_port: 25
+smtp_user: alerts@eventswarm.com
+smtp_password: mypassword
+reporting_email:
+twitter_consumer_key:
+twitter_consumer_secret:
+twitter_access_token:
+twitter_access_token_secret:
+sms_user_id: <clickatell user id>
+sms_user_name: <clickatell user name>
+sms_user_token: <clickatell token>
+sms_test_number: <your mobile number, default country +61>

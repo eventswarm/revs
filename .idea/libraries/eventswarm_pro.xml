@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="eventswarm_pro">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jars/eventswarm_pro.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
