@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'revs/app_config'
-AppConfig.init File.join(File.dirname(__FILE__), '..', 'fixtures', 'config.yml')
 require 'revs/sms_sender'
 require 'revs/email_sender'
 

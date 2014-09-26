@@ -6,7 +6,7 @@ class AppConfig
 
   class << self
 
-    def init(override_path, default_path = File.join(File.dirname(__FILE__), '..', 'config','config.yml'))
+    def init(override_path, default_path = File.join(File.dirname(__FILE__), '..', 'config','templates','config.yml'))
       @default_path = default_path
       @override_path = override_path
     end
