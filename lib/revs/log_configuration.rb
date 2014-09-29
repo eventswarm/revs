@@ -147,7 +147,7 @@ class LogConfiguration
 
     MAX_SENT = 10
     DEFAULT_LIMIT = 3600
-    LOGGER = Log4JLogger.logger('com.ensift.revs.LogConfiguration::Notifier')
+    LOGGER = Log4JLogger.logger('com.eventswarm.revs.LogConfiguration::Notifier')
     EXECUTOR_SERVICE = Executors.newFixedThreadPool(5)
     SUBJECT_TEMPLATE = ERB.new "<% if other[:count]>1 %><%= other[:count]%> <%= other[:level] %> messages<% else %> <%= other[:level].capitalize %> message<% end %> from <%= AppConfig.app_name %>:<%= other[:classifier] %>"
     TEXT_TEMPLATE = ERB.new <<EOF

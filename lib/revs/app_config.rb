@@ -16,7 +16,7 @@ class AppConfig
       begin
         @config = YAML::load File.open(@override_path)
       rescue
-        Log4JLogger.logger('com.ensift.patterns.AppConfig').warn 'Could not load localised config, using default config'
+        Log4JLogger.logger('com.eventswarm.revs.AppConfig').warn 'Could not load localised config, using default config'
         @config = @default_config
       end
     end

@@ -6,7 +6,7 @@ require 'log4j-jar'
 
 module Log4JLogger
 
-  ALWAYS_REPORT = Java::org::apache::log4j::Logger.getLogger 'com.ensift.always'
+  ALWAYS_REPORT = Java::org::apache::log4j::Logger.getLogger 'com.eventswarm.always'
   MEMORY_MONITOR = Java::org::apache::log4j::Logger.getLogger 'com.eventswarm.util.logging.MemoryMonitor'
 
   class << self
@@ -16,6 +16,6 @@ module Log4JLogger
   end
 
   def logger(name = self.class.name)
-    Log4JLogger.logger("com.ensift.revs.#{name}")
+    Log4JLogger.logger("com.eventswarm.revs.#{name}")
   end
 end

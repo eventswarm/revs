@@ -37,7 +37,7 @@ helpers do
   end
 
   def java_logger
-    Log4JLogger.logger("com.ensift.patterns.#{request.path_info}")
+    Log4JLogger.logger("com.eventswarm.revs.#{request.path_info}")
   end
 
   def log_level_text(level)
