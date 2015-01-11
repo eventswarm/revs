@@ -132,6 +132,10 @@ class Triggers
       action.java_send :execute, [Java::com::eventswarm::AddEventTrigger.java_class, Java::com::eventswarm::events::Event.java_class], java_object(trigger), java_object(event)
     end
 
+    def execute_remove(trigger, action, event)
+      action.java_send :execute, [Java::com::eventswarm::RemoveEventTrigger.java_class, Java::com::eventswarm::events::Event.java_class], java_object(trigger), java_object(event)
+    end
+
     private
 
     # if this is a java Action object, unwrap it, otherwise just use the ruby object
