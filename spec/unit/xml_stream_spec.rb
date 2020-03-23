@@ -18,7 +18,7 @@ describe 'XmlStream' do
   let(:long_text_truncated) {'I need to ensure that there are more than 150 characters in this particular text string so I will have to make it very, very, long. Can you tell me...'}
   let(:events) {EventList.new()}
 
-  before do
+  after do
     XmlStream.nuke
   end
 
@@ -28,37 +28,34 @@ describe 'XmlStream' do
     instance.should_not be_nil
     instance.port.should == 3335
     instance.factory.should == factory
+    instance.stop
   end
 
   it 'should create new singleton with factory' do
     factory = XmlHttpEventFactory.new
     instance = XmlStream.instance factory
     instance.should_not be_nil
-    instance.port.should == 3334
     instance.factory.should == factory
   end
 
   it 'should create new singleton without factory' do
     instance = XmlStream.instance
     instance.should_not be_nil
-    instance.port.should == 3334
     instance.factory.should_not be_nil
   end
 
   it 'send single event' do
     XmlStream.start
-    http = Net::HTTP.start 'localhost', 3334
+    http = Net::HTTP.start 'localhost', XmlStream.instance.port
     response = http.request_post '/', File.read(simple_object_path)
-    XmlStream.stop
     p response.to_s
     response.should be_a Net::HTTPSuccess
   end
 
   it 'send single event with whitespace' do
     XmlStream.start
-    http = Net::HTTP.start 'localhost', 3334
+    http = Net::HTTP.start 'localhost', XmlStream.instance.port
     response = http.request_post '/', File.read(whitespace_object_path)
-    XmlStream.stop
     p response.to_s
     response.should be_a Net::HTTPSuccess
   end
@@ -66,10 +63,9 @@ describe 'XmlStream' do
   it 'should collect received event' do
     XmlStream.start
     XmlStream.register_action events
-    http = Net::HTTP.start 'localhost', 3334
+    http = Net::HTTP.start 'localhost', XmlStream.instance.port
     data = File.read(simple_object_path)
     response = http.request_post '/', data
-    XmlStream.stop
     response.should be_a Net::HTTPSuccess
     events.should be_a Java::java.util.List
     events.count.should == 1
@@ -81,10 +77,9 @@ describe 'XmlStream' do
   pending 'send and collect multiple events in single request' do
     XmlStream.start
     XmlStream.register_action events
-    http = Net::HTTP.start 'localhost', 3334
+    http = Net::HTTP.start 'localhost', XmlStream.instance.port
     data = File.read(simple_object_path) + File.read(long_text_object_path)
     response = http.request_post '/', data
-    XmlStream.stop
     response.should be_a Net::HTTPSuccess
     events.count.should == 2
   end
