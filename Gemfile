@@ -1,11 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'log4j-jar', :path => '.'
-gem 'opencsv-jar', :path => '.'
-gem 'eventswarm-jar', :path => '.'
-gem 'twitter4j-jars', :path => '.'
-gem 'eventswarm-social-jar', :path => '.'
-
 gem 'solargraph'
 gem 'jar-dependencies'
 gem "activesupport", "~> 4.1"
