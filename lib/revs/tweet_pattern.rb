@@ -1,7 +1,6 @@
 require 'eventswarm-jar'
 require 'eventswarm-social-jar'
 require 'twitter4j-jars'
-require 'twitter-text'
 require 'revs/tweet_stream'
 require 'revs/log4_j_logger'
 

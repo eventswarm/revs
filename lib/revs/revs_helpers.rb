@@ -1,12 +1,10 @@
 require 'active_support/core_ext/object/blank'
 require 'eventswarm-jar'
 require 'eventswarm-social-jar'
-require 'twitter-text'
 require 'twitter4j-jars'
 require 'revs/events'
 require 'revs/log4_j_logger'
 require 'resolv'
-require 'twitter-text'
 require 'revs/app_config'
 
 java_import 'com.eventswarm.social.channels.StatusListenerChannel'
@@ -23,7 +21,6 @@ java_import 'com.eventswarm.expressions.ExpressionAbstraction'
 # Sinatra helper functions for the EventSwarm lib
 #
 helpers do
-  include Twitter::Autolink
   include Events
 
   COMPONENTS_PATH = File.join(File.dirname(__FILE__), '..', 'app', 'views', 'revs')
