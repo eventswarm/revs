@@ -8,6 +8,7 @@ gem 'eventswarm-social-jar', :path => '.'
 
 gem 'solargraph'
 gem 'jar-dependencies'
+gem "activesupport", "~> 4.1"
 
 gemspec :name => 'revs'
 

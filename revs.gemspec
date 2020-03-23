@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.requirements << 'jar com.fasterxml.uuid, java-uuid-generator'
   s.requirements << 'jar com.eventswarm, eventswarm'
   s.requirements << 'jar com.eventswarm, eventswarm-social'
-  s.add_dependency('activesupport', '~>4.0')
+  s.add_dependency('activesupport', '~> 4.1')
   s.add_dependency('uuid', '~>2.3')
   s.add_dependency('clickatell', '~>0.8')
   s.add_dependency('mail', '~>2.7')
