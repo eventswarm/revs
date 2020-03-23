@@ -6,13 +6,15 @@ gem 'eventswarm-jar', :path => '.'
 gem 'twitter4j-jars', :path => '.'
 gem 'eventswarm-social-jar', :path => '.'
 
+gem 'solargraph'
+gem 'jar-dependencies'
+
 gemspec :name => 'revs'
 
 group :development, :test do
   gem 'rspec'
   gem 'cucumber'
   gem 'rake'
-  gem 'revs', :path => '.'
 end
 
 group :test do

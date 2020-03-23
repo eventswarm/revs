@@ -3,3 +3,4 @@ log4j.properties
 .idea/workspace.xml
 .idea/tasks.xml
 lib/config/config.yml
+revs*.gem
