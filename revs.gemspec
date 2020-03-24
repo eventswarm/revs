@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'revs'
-  s.version     = '2.0.0.SNAPSHOT'
+  s.version     = '2.0.1.SNAPSHOT'
   s.date        = '2020-03-23'
   s.platform    = 'java'
   s.summary     = "EventSwarm for JRuby"
