@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = 'andyb@deontik.com'
   s.homepage    = 'https://github.com/eventswarm/revs'
   s.license     = 'Apache-2.0'
-  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*'] + Dir['lib/**/*.jar']
+  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*']
   s.require_paths = ['lib']
   s.requirements << 'jar log4j, log4j, 1.2.17'
   s.requirements << 'jar org.json, json, 20190722'
@@ -23,4 +23,5 @@ Gem::Specification.new do |s|
   s.add_dependency('uuid', '~>2.3')
   s.add_dependency('clickatell', '~>0.8')
   s.add_dependency('mail', '~>2.7')
+  s.add_runtime_dependency('jar-dependencies')
 end
