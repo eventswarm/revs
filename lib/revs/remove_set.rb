@@ -1,5 +1,5 @@
 require 'revs'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 
 java_import 'com.eventswarm.powerset.RemoveSetAction'
 

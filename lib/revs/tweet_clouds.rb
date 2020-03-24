@@ -1,8 +1,8 @@
 require 'active_support/core_ext/object/blank'
 require 'uri'
-require 'eventswarm-jar'
-require 'eventswarm-social-jar'
-require 'twitter4j-jars'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.eventswarm', 'eventswarm-social'
+require_jar 'org.twitter4j', 'twitter4j-core'
 require 'revs/tweet_stream'
 require 'revs/triggers'
 

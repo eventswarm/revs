@@ -1,5 +1,5 @@
 require 'revs'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/triggers'
 
 java_import 'com.eventswarm.channels.XmlHttpChannel'

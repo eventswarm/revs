@@ -6,7 +6,6 @@ require 'java'
 top_dir = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 lib_dir = File.expand_path(File.join(top_dir, 'lib'))
 revs_dir = File.expand_path(File.join(lib_dir, 'revs'))
-jars_dir = File.expand_path(File.join(lib_dir, 'jars'))
 
 def add_to_load_path(*directories)
   directories.each do |directory|
@@ -14,9 +13,10 @@ def add_to_load_path(*directories)
   end
 end
 
-add_to_load_path lib_dir, revs_dir, jars_dir
+add_to_load_path lib_dir, revs_dir
 
-require 'log4j-jar'
+require 'revs'
+require_jar 'log4j', 'log4j'
 org.apache.log4j.BasicConfigurator.configure
 
 require 'revs/app_config'

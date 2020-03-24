@@ -1,6 +1,6 @@
-require 'eventswarm-jar'
+require_jar 'com.eventswarm', 'eventswarm'
 require 'revs/triggers'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/brief_date'
 
 #

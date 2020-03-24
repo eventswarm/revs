@@ -1,6 +1,6 @@
 require 'revs'
 require 'revs/jdo_event'
-require 'json-jar'
+require_jar 'org.json', 'json'
 
 java_import 'com.eventswarm.events.jdo.OrgJsonEvent'
 

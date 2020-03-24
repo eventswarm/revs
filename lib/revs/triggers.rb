@@ -1,4 +1,4 @@
-require 'eventswarm-jar'
+require_jar 'com.eventswarm', 'eventswarm'
 
 # manage the registration of actions against EventSwarm triggers, since this is a bit tricky via jruby
 class Triggers

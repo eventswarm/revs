@@ -1,8 +1,8 @@
 require 'spec_helper'
 require 'revs'
 require 'revs/sender'
-require 'json-jar'
-require 'java-uuid-generator-jar'
+require_jar 'org.json', 'json'
+require_jar 'com.fasterxml.uuid', 'java-uuid-generator'
 require 'log4_j_logger'
 
 java_import 'com.eventswarm.events.jdo.JdoHeader'

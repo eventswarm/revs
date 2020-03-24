@@ -1,5 +1,5 @@
 require File.join File.dirname(__FILE__), '..','spec_helper'
-require 'json-jar'
+require_jar 'org.json', 'json'
 require 'net/http'
 require 'revs'
 require 'revs/app_config'

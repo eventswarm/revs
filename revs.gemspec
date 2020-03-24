@@ -9,15 +9,24 @@ Gem::Specification.new do |s|
   s.email       = 'andyb@deontik.com'
   s.homepage    = 'https://github.com/eventswarm/revs'
   s.license     = 'Apache-2.0'
-  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*']
-  s.require_paths = ['lib', 'lib/jars']
-  s.requirements << 'jar org.apache.logging.log4j, log4j-core'
-  s.requirements << 'jar org.twitter4j, twitter4j-core'
-  s.requirements << 'jar org.twitter4j, twitter4j-stream'
-  s.requirements << 'jar com.opencsv, opencsv'
-  s.requirements << 'jar com.fasterxml.uuid, java-uuid-generator'
-  s.requirements << 'jar com.eventswarm, eventswarm'
-  s.requirements << 'jar com.eventswarm, eventswarm-social'
+  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*'] + Dir['lib/**/*.jar']
+  s.require_paths = ['lib']
+  s.requirements << 'jar log4j, log4j, 1.2.17'
+  s.requirements << 'jar log4j, log4j, 1.2.17, :scope => test'
+  s.requirements << 'jar org.json, json, 20190722'
+  s.requirements << 'jar org.json, json, 20190722, :scope => test'
+  s.requirements << 'jar org.twitter4j, twitter4j-core, 4.0.7'
+  s.requirements << 'jar org.twitter4j, twitter4j-core, 4.0.7, :scope => test'
+  s.requirements << 'jar org.twitter4j, twitter4j-stream, 4.0.7'
+  s.requirements << 'jar org.twitter4j, twitter4j-stream, 4.0.7, :scope => test'
+  s.requirements << 'jar com.opencsv, opencsv, 5.1'
+  s.requirements << 'jar com.opencsv, opencsv, 5.1, :scope => test'
+  s.requirements << 'jar com.fasterxml.uuid, java-uuid-generator, 4.0.1'
+  s.requirements << 'jar com.fasterxml.uuid, java-uuid-generator, 4.0.1, :scope => test'
+  s.requirements << 'jar com.eventswarm, eventswarm, 2.0-SNAPSHOT'
+  s.requirements << 'jar com.eventswarm, eventswarm, 2.0-SNAPSHOT, :scope => test'
+  s.requirements << 'jar com.eventswarm, eventswarm-social, 2.0-SNAPSHOT'
+  s.requirements << 'jar com.eventswarm, eventswarm-social, 2.0-SNAPSHOT, :scope => test'
   s.add_dependency('activesupport', '~> 4.1')
   s.add_dependency('uuid', '~>2.3')
   s.add_dependency('clickatell', '~>0.8')

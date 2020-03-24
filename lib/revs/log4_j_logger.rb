@@ -2,7 +2,7 @@
 # Helper module to use log4j for logging in Ruby, thus we can manage our logging through one
 # infrastructure.
 #
-require 'log4j-jar'
+require_jar 'log4j', 'log4j'
 
 module Log4JLogger
 

@@ -1,7 +1,7 @@
 require 'revs'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/triggers'
-require 'json-jar'
+require_jar 'org.json', 'json'
 
 java_import 'com.eventswarm.channels.JsonHttpChannel'
 java_import 'com.eventswarm.channels.JsonHttpEventFactory'

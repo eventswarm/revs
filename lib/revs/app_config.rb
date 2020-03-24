@@ -1,5 +1,5 @@
 require 'yaml'
-require 'revs/log4_j_logger'
+require 'log4_j_logger'
 
 class AppConfig
   include Log4JLogger

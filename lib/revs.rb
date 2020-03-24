@@ -1,3 +1,4 @@
 # require some key jars
-require 'eventswarm-jar'
-require 'java-uuid-generator-jar'
+require 'revs_jars'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.fasterxml.uuid', 'java-uuid-generator'

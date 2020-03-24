@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'revs'
-require 'json-jar'
+require_jar 'org.json', 'json'
 require 'revs/org_json_event'
 require 'revs/json_object'
 

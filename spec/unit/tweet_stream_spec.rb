@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'rspec/expectations'
+require 'rspec/wait'
 require 'revs'
 require 'revs/tweet_stream'
 require 'revs/add_action'
@@ -20,9 +22,8 @@ describe 'TweetStream' do
     TweetStream.create
     TweetStream.add_filters(['@smon110', 'smon110'], ['#news'])
     TweetStream.connect
-    # TODO: find a way to test that connection was complete without using sleep, which rspec dislikes
-    #sleep(3) # need to wait for it to finish connecting
-    #TweetStream.connected?.should be_true
+    sleep(5) # need to wait for it to finish connectings
+    expect(TweetStream.connected?).to be_true
     TweetStream.disconnect
   end
 
@@ -31,11 +32,9 @@ describe 'TweetStream' do
     TweetStream.add_filters(['@smon110', 'smon110'], ['#news'])
     TweetStream.register_action AddAction.new{|trigger, event| add_action trigger, event}
     TweetStream.connect
-    # TODO: find a way to test that connection was complete without using sleep, which rspec dislikes
-    sleep(5) # need to wait for it to finish connecting
-    #TweetStream.connected?.should be_true
+    sleep(5)
+    expect(TweetStream.count).to be > 0
     TweetStream.disconnect
-    TweetStream.count.should > 1
   end
 
   it 'should map user handles to ids' do

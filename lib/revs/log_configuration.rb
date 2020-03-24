@@ -1,7 +1,6 @@
 require 'revs'
-require 'log4j-jar'
 require 'revs/app_config'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'singleton'
 require 'revs/email_sender'
 require 'revs/events'

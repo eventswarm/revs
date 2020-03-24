@@ -1,4 +1,4 @@
-require 'json-jar'
+require_jar 'org.json', 'json'
 
 java_import 'org.json.JSONObject'
 
