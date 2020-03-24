@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.email       = 'andyb@deontik.com'
   s.homepage    = 'https://github.com/eventswarm/revs'
   s.license     = 'Apache-2.0'
-  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*'] + Dir['lib/**/*.jar']
+  s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*']
   s.require_paths = ['lib']
+  s.add_runtime_dependency 'jar-dependencies'
   s.requirements << 'jar log4j, log4j, 1.2.17'
   s.requirements << 'jar log4j, log4j, 1.2.17, :scope => test'
   s.requirements << 'jar org.json, json, 20190722'
