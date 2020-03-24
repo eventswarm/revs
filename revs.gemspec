@@ -31,5 +31,5 @@ Gem::Specification.new do |s|
   s.add_dependency('uuid', '~>2.3')
   s.add_dependency('clickatell', '~>0.8')
   s.add_dependency('mail', '~>2.7')
-  s.add_runtime_dependency('jar-dependencies', '~> 0.4')
+  # s.add_runtime_dependency('jar-dependencies', '~> 0.4')
 end
