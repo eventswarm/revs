@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.requirements << 'jar com.eventswarm, eventswarm, 2.0-SNAPSHOT, :scope => test'
   s.requirements << 'jar com.eventswarm, eventswarm-social, 2.0-SNAPSHOT'
   s.requirements << 'jar com.eventswarm, eventswarm-social, 2.0-SNAPSHOT, :scope => test'
-  s.add_runtime_dependency('jar-dependencies')
+  s.add_runtime_dependency('jar-dependencies', '~> 0.4')
   s.add_dependency('activesupport', '~> 4.1')
   s.add_dependency('uuid', '~>2.3')
   s.add_dependency('clickatell', '~>0.8')
