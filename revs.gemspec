@@ -11,12 +11,6 @@ Gem::Specification.new do |s|
   s.license     = 'Apache-2.0'
   s.files       = ['lib/revs.rb'] + Dir['lib/revs/*.rb'] + Dir['lib/app/views/revs/*.haml'] + Dir['lib/config/templates/*'] + Dir['lib/**/*.jar']
   s.require_paths = ['lib']
-  s.requirements << 'jar log4j, log4j, 1.2.17'
-  s.requirements << 'jar org.json, json, 20190722'
-  s.requirements << 'jar org.twitter4j, twitter4j-core, 4.0.7'
-  s.requirements << 'jar org.twitter4j, twitter4j-stream, 4.0.7'
-  s.requirements << 'jar com.opencsv, opencsv, 5.1'
-  s.requirements << 'jar com.fasterxml.uuid, java-uuid-generator, 4.0.1'
   s.requirements << 'jar com.eventswarm, eventswarm, 2.0-SNAPSHOT'
   s.requirements << 'jar com.eventswarm, eventswarm-social, 2.0-SNAPSHOT'
   s.add_dependency('activesupport', '~> 4.1')

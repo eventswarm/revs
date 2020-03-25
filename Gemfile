@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'solargraph'
-gem 'jar-dependencies'
 gem "activesupport", "~> 4.1"
 
 gemspec :name => 'revs'
