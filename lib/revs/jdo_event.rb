@@ -1,4 +1,4 @@
-require 'eventswarm-jar'
+require_jar 'com.eventswarm', 'eventswarm'
 
 #
 # Reopen JdoEvent to add some convenience methods for ruby usage

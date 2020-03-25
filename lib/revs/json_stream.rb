@@ -1,7 +1,7 @@
 require 'revs'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/triggers'
-require 'json-jar'
+require_jar 'org.json', 'json'
 
 java_import 'com.eventswarm.channels.JsonHttpChannel'
 java_import 'com.eventswarm.channels.JsonHttpEventFactory'
@@ -16,7 +16,7 @@ java_import 'com.sun.net.httpserver.HttpServer'
 class JsonStream
   include Log4JLogger
 
-  DEFAULT_PORT = 3333
+  DEFAULT_PORT = 0 # use an ephemeral port if not specified
   BASE_PATH = '/'
 
   attr_reader :port, :factory
@@ -113,13 +113,12 @@ class JsonStream
   def initialize(factory, port)
     @running = false
     @factory = factory
-    @port = port
     # create default channel as a fall-through for unmonitored paths
     @channels = {BASE_PATH => JsonHttpChannel.new(factory)}
     # create and start an HTTPServer instance to feed in the HTTP requests
     address = InetSocketAddress.new(port)
     @server = HttpServer.create(address, 0)
-    p "Starting HTTP server for JSON requests"
+    @port = @server.address.port
     logger.info("Starting HTTP server for JSON requests")
     @server.createContext(BASE_PATH, channel)
   end

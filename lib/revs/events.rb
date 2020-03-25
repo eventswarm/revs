@@ -1,5 +1,5 @@
-require 'eventswarm-jar'
-require 'eventswarm-social-jar'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.eventswarm', 'eventswarm-social'
 
 # helper methods to work with EventSwarm events
 module Events

@@ -1,7 +1,7 @@
 require 'revs/sender'
 require 'mail'
 require 'erb'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/app_config'
 
 # alert sender for HTML email

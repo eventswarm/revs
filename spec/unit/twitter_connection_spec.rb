@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'revs'
 require 'revs/twitter_connection'
 require 'revs/app_config'
-require 'eventswarm-social-jar'
+require_jar 'com.eventswarm', 'eventswarm-social'
 
 java_import 'com.eventswarm.eventset.EventSet'
 

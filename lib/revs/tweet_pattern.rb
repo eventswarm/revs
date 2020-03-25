@@ -1,9 +1,8 @@
-require 'eventswarm-jar'
-require 'eventswarm-social-jar'
-require 'twitter4j-jars'
-require 'twitter-text'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.eventswarm', 'eventswarm-social'
+require_jar 'org.twitter4j', 'twitter4j-core'
 require 'revs/tweet_stream'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 
 java_import 'twitter4j.TwitterFactory'
 java_import 'twitter4j.User'

@@ -1,7 +1,7 @@
 require 'uri'
 require 'clickatell'
 require 'revs/sender'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/app_config'
 
 class SmsSender

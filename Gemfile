@@ -1,18 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'log4j-jar', :path => '.'
-gem 'opencsv-jar', :path => '.'
-gem 'eventswarm-jar', :path => '.'
-gem 'twitter4j-jars', :path => '.'
-gem 'eventswarm-social-jar', :path => '.'
+gem 'solargraph'
+gem "activesupport", "~> 4.1"
 
 gemspec :name => 'revs'
 
 group :development, :test do
   gem 'rspec'
+  gem 'rspec-wait'
   gem 'cucumber'
   gem 'rake'
-  gem 'revs', :path => '.'
 end
 
 group :test do

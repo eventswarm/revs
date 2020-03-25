@@ -1,4 +1,4 @@
-require 'eventswarm-jar'
+require_jar 'com.eventswarm', 'eventswarm'
 require 'revs/tweet_pattern'
 require 'revs/tweet_clouds'
 require 'revs/persistence'

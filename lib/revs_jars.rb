@@ -1,0 +1,40 @@
+# this is a generated file, to avoid over-writing it just delete this comment
+begin
+  require 'jar_dependencies'
+rescue LoadError
+  require 'org/jsoup/jsoup/1.13.1/jsoup-1.13.1.jar'
+  require 'commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar'
+  require 'com/eventswarm/eventswarm/2.0-SNAPSHOT/eventswarm-2.0-SNAPSHOT.jar'
+  require 'log4j/log4j/1.2.17/log4j-1.2.17.jar'
+  require 'org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar'
+  require 'org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar'
+  require 'com/opencsv/opencsv/5.0/opencsv-5.0.jar'
+  require 'commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar'
+  require 'org/slf4j/slf4j-api/1.7.29/slf4j-api-1.7.29.jar'
+  require 'commons-logging/commons-logging/1.2/commons-logging-1.2.jar'
+  require 'com/fasterxml/uuid/java-uuid-generator/4.0.1/java-uuid-generator-4.0.1.jar'
+  require 'org/twitter4j/twitter4j-stream/4.0.7/twitter4j-stream-4.0.7.jar'
+  require 'org/json/json/20190722/json-20190722.jar'
+  require 'com/eventswarm/eventswarm-social/2.0-SNAPSHOT/eventswarm-social-2.0-SNAPSHOT.jar'
+  require 'org/twitter4j/twitter4j-core/4.0.7/twitter4j-core-4.0.7.jar'
+  require 'org/apache/commons/commons-text/1.7/commons-text-1.7.jar'
+end
+
+if defined? Jars
+  require_jar 'org.jsoup', 'jsoup', '1.13.1'
+  require_jar 'commons-beanutils', 'commons-beanutils', '1.9.4'
+  require_jar 'com.eventswarm', 'eventswarm', '2.0-SNAPSHOT'
+  require_jar 'log4j', 'log4j', '1.2.17'
+  require_jar 'org.apache.commons', 'commons-lang3', '3.9'
+  require_jar 'org.apache.commons', 'commons-collections4', '4.4'
+  require_jar 'com.opencsv', 'opencsv', '5.0'
+  require_jar 'commons-collections', 'commons-collections', '3.2.2'
+  require_jar 'org.slf4j', 'slf4j-api', '1.7.29'
+  require_jar 'commons-logging', 'commons-logging', '1.2'
+  require_jar 'com.fasterxml.uuid', 'java-uuid-generator', '4.0.1'
+  require_jar 'org.twitter4j', 'twitter4j-stream', '4.0.7'
+  require_jar 'org.json', 'json', '20190722'
+  require_jar 'com.eventswarm', 'eventswarm-social', '2.0-SNAPSHOT'
+  require_jar 'org.twitter4j', 'twitter4j-core', '4.0.7'
+  require_jar 'org.apache.commons', 'commons-text', '1.7'
+end

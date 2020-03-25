@@ -1,5 +1,5 @@
 require File.join File.dirname(__FILE__), '..','spec_helper'
-require 'json-jar'
+require_jar 'org.json', 'json'
 require 'net/http'
 require 'revs'
 require 'revs/app_config'
@@ -37,20 +37,18 @@ describe 'JsonStream' do
     factory = JsonHttpEventFactory.new
     instance = JsonStream.instance factory
     instance.should_not be_nil
-    instance.port.should == 3333
     instance.factory.should == factory
   end
 
   it 'should create new singleton without factory' do
     instance = JsonStream.instance
     instance.should_not be_nil
-    instance.port.should == 3333
     instance.factory.should_not be_nil
   end
 
   it 'should send single event' do
     JsonStream.start
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     response = http.request_post '/', File.read(simple_object_path)
     JsonStream.stop
     p response.to_s
@@ -59,7 +57,7 @@ describe 'JsonStream' do
 
   it 'send single event with whitespace' do
     JsonStream.start
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     response = http.request_post '/', File.read(whitespace_object_path)
     JsonStream.stop
     p response.to_s
@@ -69,7 +67,7 @@ describe 'JsonStream' do
   it 'should collect received event' do
     JsonStream.start
     JsonStream.register_action events
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     data = File.read(simple_object_path)
     response = http.request_post '/', data
     JsonStream.stop
@@ -84,7 +82,7 @@ describe 'JsonStream' do
   it 'should collect received event on unregistered path' do
     JsonStream.start
     JsonStream.register_action events
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     data = File.read(simple_object_path)
     response = http.request_post '/some_path', data
     JsonStream.stop
@@ -97,7 +95,7 @@ describe 'JsonStream' do
   it 'should collect received event on registered path' do
     JsonStream.start
     JsonStream.register_action events, '/some_path'
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     data = File.read(simple_object_path)
     response = http.request_post '/some_path', data
     JsonStream.stop
@@ -113,7 +111,7 @@ describe 'JsonStream' do
     some_path = '/some_path'
     for_some_path = EventList.new()
     JsonStream.register_action for_some_path, some_path
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     data = File.read(simple_object_path)
     response = http.request_post some_path, data
     JsonStream.stop
@@ -128,7 +126,7 @@ describe 'JsonStream' do
   it 'send and collect multiple events in single request' do
     JsonStream.start
     JsonStream.register_action events
-    http = Net::HTTP.start 'localhost', 3333
+    http = Net::HTTP.start 'localhost', JsonStream.instance.port
     data = File.read(simple_object_path) + File.read(long_text_object_path)
     response = http.request_post '/', data
     JsonStream.stop

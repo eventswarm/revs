@@ -1,8 +1,9 @@
 require 'java'
-require 'eventswarm-jar'
-require 'eventswarm-social-jar'
-require 'json-jar'
-require 'twitter4j-jars'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.eventswarm', 'eventswarm-social'
+require_jar 'org.json', 'json'
+require_jar 'org.twitter4j', 'twitter4j-core'
+require_jar 'log4j', 'log4j'
 require 'revs/log4_j_logger'
 require 'revs/app_config'
 require 'revs/triggers'
@@ -158,17 +159,17 @@ class TweetStream
 
 
   def onConnect()
-    logger.debug("twitter4j says we are connected")
+    logger.info("twitter4j says we are connected")
     @connected = true
   end
 
   def onDisconnect()
-    logger.debug("twitter4j says we have disconnected")
+    logger.info("twitter4j says we have disconnected")
     @connected = false
   end
 
   def onCleanUp()
-    logger.debug("twitter4j asked us to clean up")
+    logger.info("twitter4j asked us to clean up")
     # do nothing for now
   end
 

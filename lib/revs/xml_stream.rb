@@ -1,5 +1,5 @@
 require 'revs'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/triggers'
 
 java_import 'com.eventswarm.channels.XmlHttpChannel'
@@ -7,7 +7,6 @@ java_import 'com.eventswarm.channels.XmlHttpEventFactory'
 java_import 'java.net.InetAddress'
 java_import 'java.net.InetSocketAddress'
 java_import 'com.sun.net.httpserver.HttpServer'
-
 
 #
 # Set up an HTTP endpoint for receipt of XML events and make them available
@@ -24,7 +23,7 @@ class XmlStream
   class << self
     # Get an instance and use the supplied factory (implementing the EventSwarm FromXmlHttp interface) as the
     # default factory
-    def instance(factory = nil, port = 3334)
+    def instance(factory = nil, port = 0)
       if @instance.nil?
         factory = XmlHttpEventFactory.new if factory.nil?
         @instance = XmlStream.new(factory, port)
@@ -77,7 +76,8 @@ class XmlStream
 
 
   def stop
-    @server.stop 0
+    logger.info "Stopping HTTP server"
+    @server.stop 0 if running?
     @running = false
   end
 
@@ -91,12 +91,11 @@ class XmlStream
   def initialize(factory, port)
     @running = false
     @factory = factory
-    @port = port
     @channel = XmlHttpChannel.new factory
     # create and start an HTTPServer instance to feed in the HTTP requests
     address = InetSocketAddress.new(port)
     @server = HttpServer.create(address, 0)
-    p "Starting HTTP server for XML requests"
+    @port = @server.address.port
     logger.info("Starting HTTP server for XML requests")
     @server.createContext('/', @channel)
   end

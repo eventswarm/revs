@@ -3,9 +3,9 @@
 #
 require 'singleton'
 require 'log4j-jar'
-require 'eventswarm-jar'
+require_jar 'com.eventswarm', 'eventswarm'
 require 'revs/email_sender'
-require 'revs/log4_j_logger'
+require_jar 'log4j', 'log4j'
 require 'revs/events'
 require 'revs/tweet_stream'
 require 'revs/brief_date'

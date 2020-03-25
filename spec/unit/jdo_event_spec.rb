@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'eventswarm-jar'
-require 'eventswarm-social-jar'
+require_jar 'com.eventswarm', 'eventswarm'
+require_jar 'com.eventswarm', 'eventswarm-social'
 require 'revs/jdo_event'
 require 'revs/org_json_event'
 require 'revs/json_object'
