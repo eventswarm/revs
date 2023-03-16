@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'solargraph'
-gem "activesupport", "~> 4.1"
+gem "activesupport", "~> 7.0"
 
 gemspec :name => 'revs'
 
